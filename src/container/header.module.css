@@ -1,0 +1,30 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    background-color:#184b8d;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 300px;
+   padding-top: 25px;
+    position: relative; 
+    z-index: 0;
+    opacity: 0.10; 
+
+
+
+
+}
+
+.data{
+/* border: 2px solid red;  */
+    padding-left: 75px;
+    padding-right: 10px;
+    color: white;
+}
+
+.value{
+    font-size: 25px;
+}
+
