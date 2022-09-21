@@ -1,6 +1,6 @@
 import Styles from "./header.module.css"
 export const Header = () => {
-    
+
     var data = [
         {
             title: "MARKETCAP",
