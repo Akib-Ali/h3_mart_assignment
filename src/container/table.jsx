@@ -12,6 +12,7 @@ export const TableShow = () => {
   const [error, setError] = useState(true)
   const [page, Setpage] = useState(1)
   const [sorts, setSort] = useState("desc")
+  
 
 
 
@@ -19,6 +20,7 @@ export const TableShow = () => {
 
   useEffect(() => {
     fetchdata()
+    setLoading(true)
   }, [page])
 
 
@@ -34,9 +36,11 @@ export const TableShow = () => {
 
     }).then((task) => {
       setData(task.data.data)
+      setLoading(false)
 
     }).catch((err) => {
       setError(err)
+      setLoading(false)
 
 
     })
@@ -50,6 +54,8 @@ export const TableShow = () => {
   return (
     <div>
       <Header />
+
+      {loading && <div className={Style.loadingindicater}> ...loading</div>}
       <div className={Style.tablecontrol}>
 
         <TableContainer>
@@ -108,7 +114,7 @@ export const TableShow = () => {
 
 
 
-        <Button colorScheme='teal' variant='outline' mt={"20px"} onClick={() => Setpage(page + 1)}>
+        <Button colorScheme='teal' variant='outline' mt={"100px"} onClick={() => Setpage(page + 1)}>
           Load More
         </Button>
 
